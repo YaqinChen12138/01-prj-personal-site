@@ -433,25 +433,26 @@ section {
 }
 
 /* Skill category */
-.skill-category {
-  padding: 2rem;
-  border: 2px solid var(--border-color);
-  background: rgba(26, 26, 26, 0.5);
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem; /* space between icon and text */
+  padding: 0.6rem 1rem;
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--text-primary);
+  border-left: 3px solid var(--neon-green);
   transition: all 0.3s ease;
 }
 
-/* Skill category hover */
-.skill-category:hover {
-  border-color: var(--neon-green);
-  background: rgba(26, 26, 26, 0.8);
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+/* Icon inside skill item */
+.skill-item i {
+  color: var(--neon-cyan);
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
-/* Skill category title */
-.skill-category-title {
-  color: var(--neon-cyan);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+.skill-item i.fa-brands {
+  color: var(--neon-green);
 }
 
 /* Skill list */
