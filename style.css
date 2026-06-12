@@ -1,1 +1,695 @@
-/* Add you CSS here */
+/* ===================================
+   HACKER-STYLE PORTFOLIO WEBSITE CSS
+   Cyberpunk Theme with Neon Accents
+   =================================== */
+
+/* RESET AND BASE STYLES */
+/* Remove default browser margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT COLOR VARIABLES */
+:root {
+  /* Color palette for the hacker theme */
+  --primary-dark: #0a0a0a;      /* Main dark background */
+  --secondary-dark: #1a1a1a;    /* Slightly lighter dark */
+  --neon-green: #00ff41;        /* Bright neon green accent */
+  --neon-cyan: #00d9ff;         /* Cyan accent for variation */
+  --text-primary: #ffffff;      /* Main text color */
+  --text-secondary: #b0b0b0;    /* Muted text color */
+  --border-color: #00ff4133;    /* Semi-transparent green for borders */
+  
+  /* Font family - monospace for hacker aesthetic */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* BODY AND GENERAL STYLES */
+body {
+  font-family: var(--font-mono);
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* Smooth scrolling for navigation links */
+  scroll-behavior: smooth;
+}
+
+/* Container for consistent max-width layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================================
+   NAVIGATION BAR STYLES
+   =================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 2px solid var(--neon-green);
+  z-index: 1000;
+  /* Add shadow effect */
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling with brackets for hacker look */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  /* Glowing text effect */
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.logo-bracket {
+  color: var(--neon-cyan);
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+/* Navigation links */
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+  color: var(--neon-green);
+  border-bottom: 2px solid var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+/* ===================================
+   HERO SECTION STYLES
+   =================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+/* Hero content container */
+.hero-content {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+/* Main hero title with animation */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--neon-green);
+  /* Glowing effect */
+  text-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(0, 255, 65, 0.5);
+  /* Animation effect */
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Animated cursor element */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 2rem;
+  background-color: var(--neon-green);
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--neon-cyan);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Call-to-action button */
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--neon-green);
+  border: 2px solid var(--neon-green);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+/* CTA button hover state */
+.cta-button:hover {
+  background: var(--neon-green);
+  color: var(--primary-dark);
+  box-shadow: 0 0 30px var(--neon-green), inset 0 0 20px rgba(0, 255, 65, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Grid background pattern */
+.grid-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(0deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ===================================
+   SECTION STYLES
+   =================================== */
+section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--neon-green);
+  text-align: center;
+  text-shadow: 0 0 15px var(--neon-green);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Decorative line under section title */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+  margin: 1rem auto 0;
+}
+
+/* ===================================
+   ABOUT SECTION STYLES
+   =================================== */
+.about {
+  background: linear-gradient(180deg, rgba(0, 255, 65, 0.02) 0%, transparent 100%);
+}
+
+/* About content layout */
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* About text area */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Stats boxes */
+.about-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Individual stat box */
+.stat-box {
+  padding: 1.5rem;
+  border: 2px solid var(--neon-green);
+  background: rgba(0, 255, 65, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+}
+
+/* Stat box hover effect */
+.stat-box:hover {
+  background: rgba(0, 255, 65, 0.15);
+  box-shadow: 0 0 20px var(--neon-green);
+  transform: translateY(-5px);
+}
+
+/* Stat numbers */
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  margin-bottom: 0.5rem;
+}
+
+/* Stat labels */
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   PROJECTS SECTION STYLES
+   =================================== */
+.projects {
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 65, 0.02) 100%);
+}
+
+/* Projects grid layout */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Individual project card */
+.project-card {
+  flex: 0 1 calc(50% - 1rem);
+  min-width: 300px;
+  max-width: 400px;
+  padding: 2rem;
+  border: 2px solid var(--border-color);
+  background: rgba(26, 26, 26, 0.5);
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background glow effect on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+/* Hover effect for project cards */
+.project-card:hover {
+  border-color: var(--neon-green);
+  background: rgba(26, 26, 26, 0.8);
+  box-shadow: 0 0 30px var(--neon-green), inset 0 0 20px rgba(0, 255, 65, 0.05);
+  transform: translateY(-8px);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Project card content positioning */
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Project header with icon */
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Project icon */
+.project-icon {
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Project title */
+.project-title {
+  font-size: 1.5rem;
+  color: var(--neon-green);
+  margin: 0;
+}
+
+/* Project description */
+.project-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Project tags container */
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* Individual tag */
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--neon-green);
+  border: 1px solid var(--neon-green);
+  border-radius: 3px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+/* Tag hover effect */
+.tag:hover {
+  background: var(--neon-green);
+  color: var(--primary-dark);
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Project link */
+.project-link {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Project link hover effect */
+.project-link:hover {
+  color: var(--neon-green);
+  margin-left: 10px;
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+/* ===================================
+   SKILLS SECTION STYLES
+   =================================== */
+.skills {
+  background: rgba(0, 255, 65, 0.03);
+}
+
+/* Skills grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Skill category */
+.skill-category {
+  padding: 2rem;
+  border: 2px solid var(--border-color);
+  background: rgba(26, 26, 26, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Skill category hover */
+.skill-category:hover {
+  border-color: var(--neon-green);
+  background: rgba(26, 26, 26, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+}
+
+/* Skill category title */
+.skill-category-title {
+  color: var(--neon-cyan);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Skill list */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* Individual skill item */
+.skill-item {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--text-primary);
+  border-left: 3px solid var(--neon-green);
+  transition: all 0.3s ease;
+}
+
+/* Skill item hover effect */
+.skill-item:hover {
+  background: rgba(0, 255, 65, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+  transform: translateX(5px);
+}
+
+/* ===================================
+   CONTACT SECTION STYLES
+   =================================== */
+.contact {
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 65, 0.02) 100%);
+}
+
+/* Contact content */
+.contact-content {
+  text-align: center;
+}
+
+/* Contact text */
+.contact-text {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Contact links container */
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Contact button */
+.contact-button {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+/* Contact button hover */
+.contact-button:hover {
+  background: var(--neon-cyan);
+  color: var(--primary-dark);
+  box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+/* ===================================
+   FOOTER STYLES
+   =================================== */
+.footer {
+  background: rgba(10, 10, 10, 0.95);
+  border-top: 2px solid var(--neon-green);
+  padding: 2rem 0;
+  margin-top: 5rem;
+  box-shadow: 0 -5px 20px rgba(0, 255, 65, 0.1);
+}
+
+/* Footer content */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Footer divider line */
+.footer-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+  margin: 1rem auto;
+}
+
+/* Footer status indicator */
+.footer-status {
+  color: var(--neon-green);
+  margin-top: 0.5rem;
+}
+
+/* Online status dot */
+.status-online {
+  color: var(--neon-green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+/* Glow pulse animation for hero title */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(0, 255, 65, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px var(--neon-green), 0 0 60px rgba(0, 255, 65, 0.8);
+  }
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Pulse animation for status dot */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 5px var(--neon-green);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 15px var(--neon-green);
+  }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN (MOBILE)
+   =================================== */
+
+/* Tablet screens (max 768px width) */
+@media (max-width: 768px) {
+  /* Adjust hero title size */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  /* Stack navigation vertically on mobile */
+  .nav-menu {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust about layout for smaller screens */
+  .about-content {
+    flex-direction: column;
+  }
+
+  /* Make project cards full width on mobile */
+  .project-card {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+
+  /* Adjust section title size */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Stack contact buttons vertically */
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-button {
+    width: 200px;
+  }
+}
+
+/* Small mobile screens (max 480px width) */
+@media (max-width: 480px) {
+  /* Remove top margin on hero for mobile */
+  .hero {
+    margin-top: 70px;
+  }
+
+  /* Reduce hero title size further */
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  /* Adjust hero subtitle */
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Reduce padding on sections */
+  section {
+    padding: 3rem 0;
+  }
+
+  /* Adjust stat boxes layout */
+  .about-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-box {
+    width: 100%;
+  }
+
+  /* Hide text in footer on very small screens */
+  .footer-status {
+    display: none;
+  }
+
+  /* Adjust navbar for small screens */
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-menu {
+    gap: 0.8rem;
+    font-size: 0.8rem;
+  }
+}
