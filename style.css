@@ -293,20 +293,19 @@ section {
   background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 65, 0.02) 100%);
 }
 
-/* Projects grid layout */
+/* Projects grid: 3 columns on desktop, equal-height rows */
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  justify-content: center;
+  justify-items: stretch;
 }
 
-/* Individual project card */
+/* Individual project card, stacked as a column so buttons can sit at the bottom */
 .project-card {
-  flex: 0 1 calc(50% - 1rem);
-  min-width: 300px;
-  max-width: 400px;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 2px solid var(--border-color);
   background: rgba(26, 26, 26, 0.5);
   transition: all 0.4s ease;
@@ -347,33 +346,41 @@ section {
   z-index: 1;
 }
 
-/* Project header with icon */
-.project-header {
+/* Thumbnail area at the top of every card (fixed ratio so cards stay the same size) */
+.project-image {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 217, 255, 0.1));
+  border-bottom: 2px solid var(--border-color);
+  font-size: 2.5rem;
+  color: var(--neon-cyan);
 }
 
-/* Project icon */
-.project-icon {
-  color: var(--neon-cyan);
-  font-size: 1.5rem;
-  font-weight: 700;
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card body holds title, tags, and buttons; grows to fill remaining card space */
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
 }
 
 /* Project title */
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--neon-green);
-  margin: 0;
-}
-
-/* Project description */
-.project-description {
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin: 0 0 1rem;
 }
 
 /* Project tags container */
@@ -403,19 +410,192 @@ section {
   box-shadow: 0 0 10px var(--neon-green);
 }
 
-/* Project link */
-.project-link {
+/* Button row, pushed to the bottom of the card regardless of content length above */
+.project-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* "View More" button */
+.btn-view-more {
+  padding: 0.5rem 1rem;
+  background: transparent;
   color: var(--neon-cyan);
-  text-decoration: none;
+  border: 1px solid var(--neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-block;
+}
+
+.btn-view-more:hover {
+  background: var(--neon-cyan);
+  color: var(--primary-dark);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Project link ("View Project →") */
+.project-link {
+  color: var(--neon-green);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 /* Project link hover effect */
 .project-link:hover {
-  color: var(--neon-green);
-  margin-left: 10px;
   text-shadow: 0 0 10px var(--neon-green);
+  margin-left: 5px;
+}
+
+/* "> VIEW ALL PROJECTS" button below the featured grid */
+.view-all-button {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--neon-green);
+  border: 2px solid var(--neon-green);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.view-all-button:hover {
+  background: var(--neon-green);
+  color: var(--primary-dark);
+  box-shadow: 0 0 30px var(--neon-green);
+  transform: translateY(-3px);
+}
+
+/* ===================================
+   ALL PROJECTS SECTION STYLES
+   =================================== */
+
+/* Hidden until the "View All Projects" button reveals it */
+.all-projects {
+  display: none;
+}
+
+.all-projects.visible {
+  display: block;
+}
+
+/* Filter tabs row */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+/* Individual filter tab */
+.filter-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  padding: 0.5rem 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tab:hover {
+  color: var(--neon-cyan);
+}
+
+/* Active tab: neon underline + glow */
+.filter-tab.active {
+  color: var(--neon-green);
+  border-bottom: 2px solid var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+/* ===================================
+   PROJECT MODAL STYLES
+   =================================== */
+
+/* Full-screen dimmed overlay behind the modal box */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* Modal content box */
+.modal-box {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--secondary-dark);
+  border: 2px solid var(--neon-green);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  padding: 2rem;
+}
+
+/* Close (×) button in the top-right corner */
+.modal-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.modal-title {
+  color: var(--neon-green);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.modal-label {
+  color: var(--neon-cyan);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.modal-text {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 /* ===================================
@@ -625,10 +805,9 @@ section {
     flex-direction: column;
   }
 
-  /* Make project cards full width on mobile */
-  .project-card {
-    flex: 0 1 100%;
-    max-width: 100%;
+  /* 2-column grid for projects on tablet screens */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Adjust section title size */
@@ -682,6 +861,11 @@ section {
   /* Hide text in footer on very small screens */
   .footer-status {
     display: none;
+  }
+
+  /* Single-column grid for projects on small mobile screens */
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 
   /* Adjust navbar for small screens */

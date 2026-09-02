@@ -59,9 +59,9 @@
       <div class="about-content">
         <!-- About text -->
         <div class="about-text">
-          <p>I'm Yaqing, a Computer Science student at the University of Nevada, Las Vegas with a strong interest in web development, software engineering, and database systems. I enjoy learning new technologies and applying them to build practical solutions that solve real-world problems.</p>
+          <p>I'm Yaqing, a Computer Science student at the University of Nevada, Las Vegas with a passion for web development, software engineering, and building technology that solves real-world problems.</p>
 
-          <p>I am actively seeking opportunities to gain industry experience, expand my knowledge, and continue growing as a software developer.</p>
+          <p>Through the Global Career Accelerator, I gained hands-on experience building web projects using JavaScript, APIs, responsive design, and AI. I also participated in a Korea Summer Camp collaboration, where I worked with an international team to develop Market Mate AI, an AI-powered tool designed to help foreign visitors navigate Korean traditional markets. Our project won 1st place in the program.</p>
         </div>
         <!-- About info boxes -->
         <div class="about-stats">
@@ -86,69 +86,396 @@
   <section id="projects" class="projects">
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
+      <!-- Grid of the 6 featured project cards -->
       <div class="projects-grid">
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-icon">&gt;</span>
-            <h3 class="project-title">Personal Portfolio Site</h3>
+
+        <!-- Project Card 1: Market Mate AI -->
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/market-AI.png" alt="Market Mate AI preview">
           </div>
-          <p class="project-description">This website is a cyberpunk, hacker-style responsive portfolio built with HTML and CSS. Features include smooth scrolling navigation, neon animations, and a responsive layout for desktop and mobile.</p>
-          <div class="project-tags">
-            <span class="tag">Portfolio</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">Design</span>
+          <div class="project-body">
+            <h3 class="project-title">Market Mate AI</h3>
+            <div class="project-tags">
+              <span class="tag">AI</span>
+              <span class="tag">React</span>
+              <span class="tag">OCR</span>
+            </div>
+            <!-- Buttons pinned to the bottom of the card -->
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-market-mate-ai">View More</button>
+              <a href="https://market-mate-ai.vercel.app" target="_blank" class="project-link">View Project →</a>
+            </div>
           </div>
-          <a href="#home" class="project-link">View Site →</a>
         </div>
 
-        <!-- Project Card 2 (QuorumLexer) -->
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-icon">&gt;</span>
+        <!-- Project Card 2: L'Oréal AI Chatbot -->
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/loreal-chatbot-1.png" alt="L'Oréal AI Chatbot preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">L'Oréal AI Chatbot</h3>
+            <div class="project-tags">
+              <span class="tag">Chatbot</span>
+              <span class="tag">AI</span>
+              <span class="tag">API</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-loreal-chatbot">View More</button>
+              <a href="https://yaqinchen12138.github.io/08-prj-loreal-chatbot/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3: L'Oréal Routine Builder -->
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/loreal-routine.png" alt="L'Oréal Routine Builder preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">L'Oréal Routine Builder</h3>
+            <div class="project-tags">
+              <span class="tag">JSON</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">API</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-loreal-routine">View More</button>
+              <a href="https://yaqinchen12138.github.io/09-prj-loreal-routine-builder/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4: Water Rush Game -->
+        <div class="project-card" data-category="front-end">
+          <div class="project-image">
+            <img src="projectImage/water-rush.png" alt="Water Rush Game preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Water Rush Game</h3>
+            <div class="project-tags">
+              <span class="tag">Game</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive UI</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-water-rush">View More</button>
+              <a href="https://yaqinchen12138.github.io/05-water-game/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 5: NASA Space Explorer -->
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/nasa-space.png" alt="NASA Space Explorer preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">NASA Space Explorer</h3>
+            <div class="project-tags">
+              <span class="tag">NASA APOD API</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Space</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-nasa-explorer">View More</button>
+              <a href="https://yaqinchen12138.github.io/07-nasa-space-explorer/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 6: Intel Sustainability Project -->
+        <div class="project-card" data-category="front-end">
+          <div class="project-image">
+            <img src="projectImage/intel.png" alt="Intel Sustainability Project preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Intel Sustainability Project</h3>
+            <div class="project-tags">
+              <span class="tag">Responsive UI</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-intel-sustainability">View More</button>
+              <a href="https://yaqinchen12138.github.io/03-prj-intel-sustainability/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Button that reveals the All Projects section below -->
+      <button id="view-all-btn" class="view-all-button">&gt; VIEW ALL PROJECTS</button>
+    </div>
+  </section>
+
+  <!-- ALL PROJECTS SECTION (hidden until "View All Projects" is clicked) -->
+  <section id="all-projects" class="all-projects">
+    <div class="container">
+      <h2 class="section-title">All Projects</h2>
+
+      <!-- Category filter tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">ALL</button>
+        <button class="filter-tab" data-filter="full-stack">FULL-STACK</button>
+        <button class="filter-tab" data-filter="front-end">FRONT-END</button>
+        <button class="filter-tab" data-filter="back-end">BACK-END</button>
+      </div>
+
+      <!-- Same 6 project cards, filterable by category -->
+      <div class="projects-grid" id="all-projects-grid">
+
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/market-AI.png" alt="Market Mate AI preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Market Mate AI</h3>
+            <div class="project-tags">
+              <span class="tag">AI</span>
+              <span class="tag">Full-Stack</span>
+              <span class="tag">React</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-market-mate-ai">View More</button>
+              <a href="https://market-mate-ai.vercel.app" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/loreal-chatbot-1.png" alt="L'Oréal AI Chatbot preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">L'Oréal AI Chatbot</h3>
+            <div class="project-tags">
+              <span class="tag">Chatbot</span>
+              <span class="tag">Full-Stack</span>
+              <span class="tag">API</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-loreal-chatbot">View More</button>
+              <a href="https://yaqinchen12138.github.io/08-prj-loreal-chatbot/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/loreal-routine.png" alt="L'Oréal Routine Builder preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">L'Oréal Routine Builder</h3>
+            <div class="project-tags">
+              <span class="tag">Full-Stack</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">API</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-loreal-routine">View More</button>
+              <a href="https://yaqinchen12138.github.io/09-prj-loreal-routine-builder/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="front-end">
+          <div class="project-image">
+            <img src="projectImage/water-rush.png" alt="Water Rush Game preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Water Rush Game</h3>
+            <div class="project-tags">
+              <span class="tag">Game</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Canvas</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-water-rush">View More</button>
+              <a href="https://yaqinchen12138.github.io/05-water-game/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="full-stack">
+          <div class="project-image">
+            <img src="projectImage/nasa-space.png" alt="NASA Space Explorer preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">NASA Space Explorer</h3>
+            <div class="project-tags">
+              <span class="tag">API</span>
+              <span class="tag">Full-Stack</span>
+              <span class="tag">Space</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-nasa-explorer">View More</button>
+              <a href="https://yaqinchen12138.github.io/07-nasa-space-explorer/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="front-end">
+          <div class="project-image">
+            <img src="projectImage/intel.png" alt="Intel Sustainability Project preview">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Intel Sustainability Project</h3>
+            <div class="project-tags">
+              <span class="tag">Sustainability</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-intel-sustainability">View More</button>
+              <a href="https://yaqinchen12138.github.io/03-prj-intel-sustainability/" target="_blank" class="project-link">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back-end only project, shown here but not in the Featured Projects grid -->
+        <div class="project-card" data-category="back-end">
+          <div class="project-image"><i class="fa-solid fa-terminal"></i></div>
+          <div class="project-body">
             <h3 class="project-title">QuorumLexer</h3>
+            <div class="project-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Lexer</span>
+              <span class="tag">Compiler</span>
+              <span class="tag">Language Processing</span>
+            </div>
+            <div class="project-buttons">
+              <button class="btn-view-more" data-modal="modal-quorum-lexer">View More</button>
+              <a href="https://github.com/YaqinChen12138/QuorumLexer" target="_blank" class="project-link">View Repository →</a>
+            </div>
           </div>
-          <p class="project-description">A lexical analyzer for the Quorum programming language — tokenizes source code to support parsing and tooling. Useful for compiler construction, language analysis, and educational projects.</p>
-          <div class="project-tags">
-            <span class="tag">Lexer</span>
-            <span class="tag">Compiler</span>
-            <span class="tag">Java</span>
-          </div>
-          <a href="https://github.com/YaqinChen12138/QuorumLexer" target="_blank" class="project-link">View Repository →</a>
         </div>
 
-        <!-- Project Card 3 (Las Vegas Travel App) -->
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-icon">&gt;</span>
-            <h3 class="project-title">Las Vegas Travel App</h3>
-          </div>
-          <p class="project-description">A travel guide and itinerary planner for Las Vegas — in active development. Features will include venue listings, maps, offline support, and custom itineraries for different interests.</p>
-          <div class="project-tags">
-            <span class="tag">App</span>
-            <span class="tag">React</span>
-            <span class="tag">Python</span>
-          </div>
-          <a href="#" class="project-link">Work In Progress →</a>
-        </div>
-
-        <!-- Project Card 4 (Coming Soon) -->
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-icon">&gt;</span>
-            <h3 class="project-title">Coming Soon</h3>
-          </div>
-          <p class="project-description">This is a text. This is a text. This is a text. h.h</p>
-          <div class="project-tags">
-            <span class="tag">Comming</span>
-            <span class="tag">Soon</span>
-            <span class="tag">O.O</span>
-          </div>
-          <a href="#" class="project-link">Coming Soon →</a>
-        </div>
       </div>
     </div>
   </section>
+
+  <!-- PROJECT DETAIL MODALS (one per project, opened by "View More") -->
+
+  <div class="modal-overlay" id="modal-market-mate-ai">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">Market Mate AI</h3>
+      <p class="modal-description">An AI-powered web app designed to help international visitors navigate Korean traditional markets by translating food information and simplifying communication with local vendors.</p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">React, Node.js, AI/ML APIs, OCR, Claude Code</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text"> OCR food recognition and translation, allergen and spice warnings, food descriptions and ingredients, pronunciation and audio assistance, vendor communication, personalized ordering phrases, and scan history.</p>
+      <p class="modal-label">Achievement:</p>
+      <p class="modal-text">1st Place - Korea Summer Camp Collaboration Project</p>
+      <p class="modal-label">Project Documentation:</p>
+      <p class="modal-text">
+          <a href="https://app.notion.com/p/Market-Mate-Ai-3a0723864e928000ad86c1177e070158"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Market Mate AI on Notion ↗
+          </a>
+      </p>
+      <p class="modal-label">Group Project:</p>
+      <p class="modal-text">Jibin Kim, Yaqin Chen, Chase Southgate, Aymen Awol, Sihoon Park</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-loreal-chatbot">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">L'Oréal AI Chatbot</h3>
+      <p class="modal-description">An AI-powered beauty assistant that helps users discover L'Oréal products and receive personalized skincare and beauty recommendations through natural conversation.</p>
+      <p class="modal-label">Brand Guides:</p>
+      <p class="modal-text"><a href="https://www.futurebrand.com/our-work/loreal" target="_blank">FutureBrand | L'Oréal</a><br><a href="https://hello.monotype.com/rs/800-DWE-978/images/BrandReview_LOREAL.pdf" target="_blank">BrandReview_LOREAL.pdf</a></p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">HTML, CSS, JavaScript, JSON, OpenAI API, Cloudflare Workers</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text">AI-powered beauty conversations, personalized product recommendations, real L'Oréal product data, category-based product discovery, and a responsive chat interface.</p>
+      <p class="modal-label">My Contribution:</p>
+      <p class="modal-text">Designed and built the chatbot interface, integrated real product data, created the AI prompt system, and connected the frontend to the OpenAI API through a Cloudflare Worker.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-loreal-routine">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">L'Oréal Routine Builder</h3>
+      <p class="modal-description">A personalized beauty routine builder that helps users discover L'Oréal products and create a routine based on their individual needs and preferences.</p>
+      <p class="modal-label">Brand Guides:</p>
+      <p class="modal-text"><a href="https://www.futurebrand.com/our-work/loreal" target="_blank">FutureBrand | L'Oréal</a><br><a href="https://hello.monotype.com/rs/800-DWE-978/images/BrandReview_LOREAL.pdf" target="_blank">BrandReview_LOREAL.pdf</a></p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">HTML, CSS, JavaScript, JSON, API</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text">Personalized routine generation, real L'Oréal product data, product recommendations, category-based product selection, and responsive design.</p>
+      <p class="modal-label">My Contribution:</p>
+      <p class="modal-text">Designed and built the routine builder interface, integrated product data, and developed the logic for generating personalized product routines based on user selections.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-water-rush">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">Water Rush Game</h3>
+      <p class="modal-description">An interactive browser game inspired by charity: water, where players collect clean water while avoiding contaminated water to complete their mission.</p>
+      <p class="modal-label">Brand Guidelines:</p>
+      <p class="modal-text"><a href="pdf/cw_Brand-UsageGuide.pdf" target="_blank">View the Brand Usage Guide (PDF)</a></p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">HTML, CSS, JavaScript, ChatGPT-generated images</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text">Clean and dirty water mechanics, score and penalty system, multiple difficulty modes, countdown timer, sound effects, pause and reset controls, responsive design, and mission-complete animations.</p>
+      <p class="modal-label">My Contribution:</p>
+      <p class="modal-text">Designed and developed the game mechanics, scoring system, difficulty modes, interactive controls, visual effects, and responsive game interface.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-nasa-explorer">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">NASA Space Explorer</h3>
+      <p class="modal-description">An interactive space exploration web app that uses NASA's Astronomy Picture of the Day API to let users discover space images, videos, and astronomy information.</p>
+      <p class="modal-label">Brand Guidelines &amp; API:</p>
+      <p class="modal-text"><a href="https://www.nasa.gov/nasa-brand-center/brand-guidelines/" target="_blank">NASA Brand Guidelines</a><br><a href="https://nasa.github.io/nasawds-site/components/colors/" target="_blank">Colors | NASA Web Design System</a><br>NASA's APOD API: <a href="https://api.nasa.gov/" target="_blank">NASA Open APIs</a></p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">HTML, CSS, JavaScript, NASA APOD API</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text"> Date-range search, dynamic space gallery, APOD image and video support, detailed image modals, astronomy explanations, random space facts, and responsive design.</p>
+      <p class="modal-label">My Contribution:</p>
+      <p class="modal-text">Integrated the NASA APOD API, developed the date-based search and dynamic gallery, implemented image and video handling, and designed the interactive modal and responsive interface.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-intel-sustainability">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">Intel Sustainability Project</h3>
+      <p class="modal-description">An interactive webpage showcasing Intel's sustainability journey, environmental initiatives, and progress toward a more sustainable future.</p>
+      <p class="modal-label">Brand Guidelines:</p>
+      <p class="modal-text"><a href="pdf/Intel-Brand-Guideline.pdf" target="_blank">Intel Brand Guidelines (PDF)</a></p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">HTML, CSS, JavaScript</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text">Interactive sustainability timeline, horizontal scroll navigation, hover effects, responsive layouts, informational content sections, and accessible design.</p>
+      <p class="modal-label">My Contribution:</p>
+      <p class="modal-text"> Built and styled the responsive webpage, developed the interactive horizontal timeline using CSS scroll snap, and added visual effects and responsive behavior to improve the user experience.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-quorum-lexer">
+    <div class="modal-box">
+      <button class="modal-close">&times;</button>
+      <h3 class="modal-title">QuorumLexer</h3>
+      <p class="modal-description">A Java-based lexical analyzer for the Quorum programming language that tokenizes source code for parsing and compiler processing.</p>
+      <p class="modal-label">Technologies:</p>
+      <p class="modal-text">Java</p>
+      <p class="modal-label">Key Features:</p>
+      <p class="modal-text">Source code tokenization, support for parsing and compiler tooling, structured for language analysis and educational use.</p>
+      <p class="modal-label">My Contribution:</p>
+      <p class="modal-text">Designed and implemented the lexer's tokenization rules and back-end processing logic.</p>
+    </div>
+  </div>
 
   <!-- SKILLS SECTION -->
   <section id="skills" class="skills">
@@ -216,5 +543,8 @@
       <p class="footer-status">Status: <span class="status-online">●</span> Available for Projects</p>
     </div>
   </footer>
+
+  <!-- JavaScript for project modals, view-all toggle, and category filtering -->
+  <script src="script.js"></script>
 </body>
 </html>
